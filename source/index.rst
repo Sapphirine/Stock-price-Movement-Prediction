@@ -30,18 +30,17 @@ Mahout
 Predicting stock price movement is commonly used in the investment field. The basic idea of this prediction is using the historical data to predict the next following days’ price will go higher or lower. This topic is related to big data course is based on the following aspect: Firstly, we need the training data to build the prediction model, in order for the accuracy, the large amount of data is required. Based on the fact of time consistency of stock price and the frequency of updating, we are able to find dataset that is suitable for prediction model. The dataset used in this project is from yahoo finance. In order to state the problem, IBM and HD datasets are used and it contains different time periods and frequency to test the functionality of our prediction model, from 1984 to 2014, 2004 to 2014, 2013 to 2014, based on different frequency as data are collected as daily, weekly, monthly.
 
 Description of Method
-       	Mahout provides a package for linear regression: org.apache.mahout.classfier.sgd.TrainLogistic. This package allows user to generate a model via training data and then apply the generated model to testing data in order to calculate the accuracy and achieve other related technical results.
- 	      A prediction model (i.e. a linear hypothetical function) is built based on information of a stock’s opening price, highest price, lowest price and closing price (OHLC) in order to achieve higher accuracy. That’s the reason we choose datasets from Yahoo Finance which have enough information we need.
+Mahout provides a package for linear regression: org.apache.mahout.classfier.sgd.TrainLogistic. This package allows user to generate a model via training data and then apply the generated model to testing data in order to calculate the accuracy and achieve other related technical results.
+A prediction model (i.e. a linear hypothetical function) is built based on information of a stock’s opening price, highest price, lowest price and closing price (OHLC) in order to achieve higher accuracy. That’s the reason we choose datasets from Yahoo Finance which have enough information we need.
  
 Preprocessed steps
-1. 	set up the path:
-export MAHOUT_HOME=${user’s path to mahout-trunk}/mahout-trunk/bin
-export MAHOUT_CONF_DIR=${user’s path to mahout-trunk}/mahout-trunk/src/conf
-2.  Build the working directory:
-export WORK_DIR=${user’s path to Workdir}
-mkdir -p ${user’s path to Workdir}
- 
-3. 	Select predictors and target values:
+1. set up the path:
+    export MAHOUT_HOME=${user’s path to mahout-trunk}/mahout-trunk/bin
+    export MAHOUT_CONF_DIR=${user’s path to mahout-trunk}/mahout-trunk/src/conf
+2. Build the working directory:
+    export WORK_DIR=${user’s path to Workdir}
+    mkdir -p ${user’s path to Workdir}
+3. Select predictors and target values:
     Predictor values are selected as input to train the model. As mentioned above, opening price, highest price, lowest price and closing price (OHLC) are chosen while ignoring dates and volumes. The predictor values are decided via trials with different variations. And higher accuracy can be got with OHLC.
     Target value is created to predict the next day’s price by comparing one day’s close price and the next following day’s open price, indicates the price will be “Lower” or “Higher”. “Lower” means next day’s open price is no bigger than current day’s close price, while “Higher” means next day’s open price is bigger than current day’s close price. Target values are added by Excel easily using a simple formula: =IF(E2>=B3, ‘Lower’, ‘Higher’), where E2 is current day’s close and B3 is next day’s open.
  
@@ -57,8 +56,6 @@ Hadoop provides various application programmer interfaces(APIs) for various lang
 .. image:: features.png
    :width: 800
    :height: 400
-
-Comparison Chart Provided by Cloudera
 
 In order to qualify these tools for our use, we determined the requirements for our application and investigated similar applications that have been implemented by various individuals. We decided to use scikit-learn for the machine learning tools our application requires. This was our best option given the language for reasons we explain later in this report. Scikit-learn is a third party library with various dependencies that are also third party libraries with C/C++ base(Numpy, Scipy, and Matplotlib). Our primary goal was to choose a Python API that would allow us to use these third party libraries alongside standard Python packages. We found out that these libraries were supported via pydoop as its underlying framework was Hadoop pipes. Hadoop provides pipes to C/C++ among its native APIs that C/C++ processes can communicate and run on Hadoop framework. Pydoop provides a wrapper around Hadoop pipes via Boost providing a clean and native CPython environment for development. A massive advantage of Pydoop over other Python Hadoop APIs is its ability to provide separation between HDFS and MapReduce. Pydoop provides a Python HDFS API, which is not available in other solutions. If used effectively, Hadoop’s distributed file system can be utilized for various parallel processing applications that do not necessarily use Hadoop’s YARN. Another extremely crucial factor was Python version these possible APIs supported. Pydoop was able to provide us with the support required since it supports every Hadoop version from v1.1 to v2.5.1.
 
