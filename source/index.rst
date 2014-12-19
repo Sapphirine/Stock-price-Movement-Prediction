@@ -10,9 +10,14 @@ Welcome to Stock Price Movement Prediction Using Mahout and Pydoop's documentati
 Demo
 =================
 
-.. youtube:: 
-      <iframe width="560" height="315" src="//www.youtube.com/embed/0Rafkql5UH0" frameborder="0" allowfullscreen></iframe>
-       
+
+.. youtube:: http://www.youtube.com/watch?v=Ql9sn3aLLlI
+
+
+
+
+
+
 Mahout
 ==================
 
