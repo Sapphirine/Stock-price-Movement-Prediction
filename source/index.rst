@@ -27,7 +27,7 @@ https://www.youtube.com/watch?v=0Rafkql5UH0
 Mahout
 ==================
 
-Tian and Yuheng's Mahout discussion goes here
+Predicting stock price movement is commonly used in the investment field. The basic idea of this prediction is using the historical data to predict the next following days’ price will go higher or lower. This topic is related to big data course is based on the following aspect: Firstly, we need the training data to build the prediction model, in order for the accuracy, the large amount of data is required. Based on the fact of time consistency of stock price and the frequency of updating, we are able to find dataset that is suitable for prediction model. The dataset used in this project is from yahoo finance. In order to state the problem, IBM and HD datasets are used and it contains different time periods and frequency to test the functionality of our prediction model, from 1984 to 2014, 2004 to 2014, 2013 to 2014, based on different frequency as data are collected as daily, weekly, monthly.
 
 
 Pydoop
