@@ -55,7 +55,7 @@ set -e
 
 if [ "x$alg" == "xsgd" ]; then
 
-  echo "Split the preprocessed dataset and create a 90% percent training set and a 10%"
+  echo "Split the preprocessed dataset and create a 90% percent of training set and a 10% percent of testing set"
   ./bin/mahout splitDataset \
     -i ${Workdir}/table.csv \
     -o ${Workdir}/table_train \
