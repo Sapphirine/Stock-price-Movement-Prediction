@@ -39,7 +39,7 @@ Hadoop provides various application programmer interfaces(APIs) for various lang
 
 .. image:: features.png
    :width: 800
-   :height: 600
+   :height: 400
 
 In order to qualify these tools for our use, we determined the requirements for our application and investigated similar applications that have been implemented by various individuals. We decided to use scikit-learn for the machine learning tools our application requires. This was our best option given the language for reasons we explain later in this report. Scikit-learn is a third party library with various dependencies that are also third party libraries with C/C++ base(Numpy, Scipy, and Matplotlib). Our primary goal was to choose a Python API that would allow us to use these third party libraries alongside standard Python packages. We found out that these libraries were supported via pydoop as its underlying framework was Hadoop pipes. Hadoop provides pipes to C/C++ among its native APIs that C/C++ processes can communicate and run on Hadoop framework. Pydoop provides a wrapper around Hadoop pipes via Boost providing a clean and native CPython environment for development. A massive advantage of Pydoop over other Python Hadoop APIs is its ability to provide separation between HDFS and MapReduce. Pydoop provides a Python HDFS API, which is not available in other solutions. If used effectively, Hadoop’s distributed file system can be utilized for various parallel processing applications that do not necessarily use Hadoop’s YARN. Another extremely crucial factor was Python version these possible APIs supported. Pydoop was able to provide us with the support required since it supports every Hadoop version from v1.1 to v2.5.1.
 
