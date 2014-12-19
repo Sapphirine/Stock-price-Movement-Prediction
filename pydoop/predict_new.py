@@ -6,7 +6,7 @@ from sklearn.linear_model import SGDRegressor
 import random
 import pprint
 
-
+raise NotImplementedError('This is the non-pydoop version, please see predict_new_map_red.py for the application')
 
 
 print "Prediction on IBM 30 year data:"
