@@ -6,13 +6,12 @@
 Welcome to Stock Price Movement Prediction Using Mahout and Pydoop's documentation!
 ===================================================================================
 
-Contents:
 
-.. toctree::
-   :maxdepth: 2
+Demo
+=================
 
-.. raw_html::
-   
+.. raw:: html
+
         <object width="480" height="385"><param name="movie"
         value="https://www.youtube.com/watch?v=0Rafkql5UH0"></param><param
         name="allowFullScreen" value="true"></param><param
@@ -21,6 +20,23 @@ Contents:
         type="application/x-shockwave-flash" allowscriptaccess="always"
         allowfullscreen="true" width="480"
         height="385"></embed></object>
+
+Mahout
+==================
+
+
+
+
+
+Pydoop
+==================
+
+
+
+Results
+==================
+
+
 
 
 Indices and tables
