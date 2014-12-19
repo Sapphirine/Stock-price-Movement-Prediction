@@ -47,13 +47,18 @@ Preprocessed steps
 Running steps
     1. Split the preprocessed dataset and create a 90% percent of training set and a 10% percent of testing set, the command line is as following:
     mahout-trunk/bin/mahout splitDataset --input Datadir/table.csv --output Workdir/table_train --trainingPercentage 0.9 --probePercentage 0.1
+    
     2. Convert dataset of training set to sequence file, the command line is as following:
     mahout-trunk/bin/mahout seqdirectory -i Workdir/table_train/trainingSet -o Workdir/sequence/train -c UTF-8 -chunk 64 -xm sequential
+    
     3. Convert sequence file of training set to csv file, the command line is as following:
     mahout-trunk/bin/mahout seqdumper -i Workdir/sequence/train -o Workdir/table_train.csv
+    
     4. The command lines for processing testing data are similar to step 2 and 3.
+    
     5. Then here is the command line to generate the model:
     mahout-trunk/bin/mahout org.apache.mahout.classifier.sgd.TrainLogistic --passes 100 --rate 1 --lambda 0.0001 --input Workdir/table_train.csv --features 21 --output Workdir/stock.model --target nextday_price_dir --categories 2 --predictors Open High Low Close --types n n
+    
     6. Finally, here is the command line to test the model:
     mahout-trunk/bin/mahout org.apache.mahout.classifier.sgd.RunLogistic --input Workdir/table_test.csv --model Workdir/stock.model --auc --scores --confusion
 
