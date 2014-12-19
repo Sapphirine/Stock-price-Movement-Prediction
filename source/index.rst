@@ -100,6 +100,12 @@ Results
 
 References
 ==================
+Mahout in Action(2010) Sean.Owen
+
+https://www.youtube.com/watch?v=Yo9BaCptZN8
+
+http://bickson.blogspot.com/2011/01/mahout-on-amazon-ec2-part-2-testing.html
+
 http://blog.cloudera.com/blog/2013/01/a-guide-to-python-frameworks-for-hadoop/
 
 http://pydoop.sourceforge.net/docs/index.html
@@ -107,6 +113,7 @@ http://pydoop.sourceforge.net/docs/index.html
 http://scikit-learn.org/stable/modules/sgd.html
 
 https://www.cbinsights.com/blog/python-tools-machine-learning/
+
 
 
 Indices and tables
