@@ -11,6 +11,16 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
+.. raw_html::
+   
+        <object width="480" height="385"><param name="movie"
+        value="https://www.youtube.com/watch?v=0Rafkql5UH0"></param><param
+        name="allowFullScreen" value="true"></param><param
+        name="allowscriptaccess" value="always"></param><embed
+        src="http://www.youtube.com/v/SBqYZ3KdAUc&hl=en_US&fs=1&rel=0"
+        type="application/x-shockwave-flash" allowscriptaccess="always"
+        allowfullscreen="true" width="480"
+        height="385"></embed></object>
 
 
 Indices and tables
