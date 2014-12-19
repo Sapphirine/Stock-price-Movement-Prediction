@@ -55,7 +55,7 @@ Running steps
         mahout-trunk/bin/mahout seqdumper -i Workdir/sequence/train -o Workdir/table_train.csv
     
     4. The command lines for processing testing data are similar to step 2 and 3.
-    
+        
     5. Then here is the command line to generate the model:
         mahout-trunk/bin/mahout org.apache.mahout.classifier.sgd.TrainLogistic --passes 100 --rate 1 --lambda 0.0001 --input Workdir/table_train.csv --features 21 --output Workdir/stock.model --target nextday_price_dir --categories 2 --predictors Open High Low Close --types n n
     
