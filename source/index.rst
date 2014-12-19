@@ -29,6 +29,23 @@ Mahout
 
 Predicting stock price movement is commonly used in the investment field. The basic idea of this prediction is using the historical data to predict the next following days’ price will go higher or lower. This topic is related to big data course is based on the following aspect: Firstly, we need the training data to build the prediction model, in order for the accuracy, the large amount of data is required. Based on the fact of time consistency of stock price and the frequency of updating, we are able to find dataset that is suitable for prediction model. The dataset used in this project is from yahoo finance. In order to state the problem, IBM and HD datasets are used and it contains different time periods and frequency to test the functionality of our prediction model, from 1984 to 2014, 2004 to 2014, 2013 to 2014, based on different frequency as data are collected as daily, weekly, monthly.
 
+Description of Method
+       	Mahout provides a package for linear regression: org.apache.mahout.classfier.sgd.TrainLogistic. This package allows user to generate a model via training data and then apply the generated model to testing data in order to calculate the accuracy and achieve other related technical results.
+ 	      A prediction model (i.e. a linear hypothetical function) is built based on information of a stock’s opening price, highest price, lowest price and closing price (OHLC) in order to achieve higher accuracy. That’s the reason we choose datasets from Yahoo Finance which have enough information we need.
+ 
+Preprocessed steps
+1. 	set up the path:
+export MAHOUT_HOME=${user’s path to mahout-trunk}/mahout-trunk/bin
+export MAHOUT_CONF_DIR=${user’s path to mahout-trunk}/mahout-trunk/src/conf
+2.  Build the working directory:
+export WORK_DIR=${user’s path to Workdir}
+mkdir -p ${user’s path to Workdir}
+ 
+3. 	Select predictors and target values:
+    Predictor values are selected as input to train the model. As mentioned above, opening price, highest price, lowest price and closing price (OHLC) are chosen while ignoring dates and volumes. The predictor values are decided via trials with different variations. And higher accuracy can be got with OHLC.
+    Target value is created to predict the next day’s price by comparing one day’s close price and the next following day’s open price, indicates the price will be “Lower” or “Higher”. “Lower” means next day’s open price is no bigger than current day’s close price, while “Higher” means next day’s open price is bigger than current day’s close price. Target values are added by Excel easily using a simple formula: =IF(E2>=B3, ‘Lower’, ‘Higher’), where E2 is current day’s close and B3 is next day’s open.
+ 
+
 
 Pydoop
 ==================
