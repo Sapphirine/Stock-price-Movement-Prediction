@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Stock Price Movement Prediction Using Mahout and Pydoop's documentation!
+Stock Price Movement Prediction Using Mahout and Pydoop's Website for Big Data Analytics course Fall 2014 Columbia University
 ===================================================================================
 
 
@@ -11,7 +11,8 @@ Demo
 =================
 
 
-Please refer to the following link to see our application in action:  https://www.youtube.com/watch?v=0Rafkql5UH0
+Please refer to the following link to see our application in action:  
+https://www.youtube.com/watch?v=0Rafkql5UH0
 
 
 
