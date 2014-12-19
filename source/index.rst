@@ -43,7 +43,20 @@ Preprocessed steps
     3. Select predictors and target values:
     Predictor values are selected as input to train the model. As mentioned above, opening price, highest price, lowest price and closing price (OHLC) are chosen while ignoring dates and volumes. The predictor values are decided via trials with different variations. And higher accuracy can be got with OHLC.
     Target value is created to predict the next day’s price by comparing one day’s close price and the next following day’s open price, indicates the price will be “Lower” or “Higher”. “Lower” means next day’s open price is no bigger than current day’s close price, while “Higher” means next day’s open price is bigger than current day’s close price. Target values are added by Excel easily using a simple formula: =IF(E2>=B3, ‘Lower’, ‘Higher’), where E2 is current day’s close and B3 is next day’s open.
-    
+
+Running steps
+    1. Split the preprocessed dataset and create a 90% percent of training set and a 10% percent of testing set, the command line is as following:
+    mahout-trunk/bin/mahout splitDataset --input Datadir/table.csv --output Workdir/table_train --trainingPercentage 0.9 --probePercentage 0.1
+    2. Convert dataset of training set to sequence file, the command line is as following:
+    mahout-trunk/bin/mahout seqdirectory -i Workdir/table_train/trainingSet -o Workdir/sequence/train -c UTF-8 -chunk 64 -xm sequential
+    3. Convert sequence file of training set to csv file, the command line is as following:
+    mahout-trunk/bin/mahout seqdumper -i Workdir/sequence/train -o Workdir/table_train.csv
+    4. The command lines for processing testing data are similar to step 2 and 3.
+    5. Then here is the command line to generate the model:
+    mahout-trunk/bin/mahout org.apache.mahout.classifier.sgd.TrainLogistic --passes 100 --rate 1 --lambda 0.0001 --input Workdir/table_train.csv --features 21 --output Workdir/stock.model --target nextday_price_dir --categories 2 --predictors Open High Low Close --types n n
+    6. Finally, here is the command line to test the model:
+    mahout-trunk/bin/mahout org.apache.mahout.classifier.sgd.RunLogistic --input Workdir/table_test.csv --model Workdir/stock.model --auc --scores --confusion
+
 Pydoop
 ==================
 
