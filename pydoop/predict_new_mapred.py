@@ -3,6 +3,7 @@ __author__ = 'arkilic'
 import csv
 import numpy as np
 from sklearn.linear_model import SGDRegressor
+from sklearn.linear_model import SGDClassifier
 import random
 import pprint
 import sys, logging, struct
