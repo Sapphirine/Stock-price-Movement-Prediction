@@ -34,16 +34,6 @@ Mahout provides a package for linear regression: org.apache.mahout.classfier.sgd
 A prediction model (i.e. a linear hypothetical function) is built based on information of a stock’s opening price, highest price, lowest price and closing price (OHLC) in order to achieve higher accuracy. That’s the reason we choose datasets from Yahoo Finance which have enough information we need.
  
 Preprocessed steps
-1. set up the path:
-    export MAHOUT_HOME=${user’s path to mahout-trunk}/mahout-trunk/bin
-    export MAHOUT_CONF_DIR=${user’s path to mahout-trunk}/mahout-trunk/src/conf
-2. Build the working directory:
-    export WORK_DIR=${user’s path to Workdir}
-    mkdir -p ${user’s path to Workdir}
-3. Select predictors and target values:
-    Predictor values are selected as input to train the model. As mentioned above, opening price, highest price, lowest price and closing price (OHLC) are chosen while ignoring dates and volumes. The predictor values are decided via trials with different variations. And higher accuracy can be got with OHLC.
-    Target value is created to predict the next day’s price by comparing one day’s close price and the next following day’s open price, indicates the price will be “Lower” or “Higher”. “Lower” means next day’s open price is no bigger than current day’s close price, while “Higher” means next day’s open price is bigger than current day’s close price. Target values are added by Excel easily using a simple formula: =IF(E2>=B3, ‘Lower’, ‘Higher’), where E2 is current day’s close and B3 is next day’s open.
- 
 
 
 Pydoop
