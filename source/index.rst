@@ -100,6 +100,13 @@ Results
 
 References
 ==================
+http://blog.cloudera.com/blog/2013/01/a-guide-to-python-frameworks-for-hadoop/
+
+http://pydoop.sourceforge.net/docs/index.html
+
+http://scikit-learn.org/stable/modules/sgd.html
+
+https://www.cbinsights.com/blog/python-tools-machine-learning/
 
 
 Indices and tables
