@@ -6,6 +6,13 @@
 Stock Price Movement Prediction Using Mahout and Pydoop's Website for Big Data Analytics course Fall 2014 Columbia University
 ===================================================================================
 
+Abstract
+================
+
+
+Efficient market hypothesis first made popular by methods introduced by BARRA, suggests stock prices follow a random walk that could be explained via Brownian motion techniques. Stock market prediction is the act of trying to determine the future value of a company stock or other financial instrument traded on an exchange that follows such motion.  Our goal for this project is to use open-source machine learning techniques and high performance computing tools (Hadoop with Mahout and pydoop&scikit-learn) in order to predict movements of stocks (specifically IBM) over various periods of time (10, 20, 30 year periods). This paper explains differences in the development process, accuracy, and performance of using these different frameworks as well as challenges. As a result, we will be able to provide a comparison for those, who are interested in putting high-performance prototypes together that use Hadoop and its tools for similar stock price prediction applications as well as portfolio risk management. 
+
+
 
 Demo
 =================
