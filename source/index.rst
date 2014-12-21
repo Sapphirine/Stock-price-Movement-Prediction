@@ -27,7 +27,7 @@ https://www.youtube.com/watch?v=0Rafkql5UH0
 Mahout
 ==================
 
-Predicting stock price movement is commonly used in the investment field. The basic idea of this prediction is using the historical data to predict the next following days’ price will go higher or lower. This topic is related to big data course is based on the following aspect: Firstly, we need the training data to build the prediction model, in order for the accuracy, the large amount of data is required. Based on the fact of time consistency of stock price and the frequency of updating, we are able to find dataset that is suitable for prediction model. The dataset used in this project is from yahoo finance. In order to state the problem, HD datasets are used and it contains different time periods and frequency to test the functionality of our prediction model, from 1984 to 2014, 2004 to 2014, 2013 to 2014, based on different frequency as data are collected as daily, weekly, monthly.
+Predicting stock price movement is commonly used in the investment field. The basic idea of this prediction is using the historical data to predict the next following days’ price will go higher or lower. This topic is related to big data course is based on the following aspect: Firstly, we need the training data to build the prediction model, in order for the accuracy, the large amount of data is required. Based on the fact of time consistency of stock price and the frequency of updating, we are able to find dataset that is suitable for prediction model. The dataset used in this project is from yahoo finance. In order to state the problem, HD and IBM datasets are used and it contains different time periods and frequency to test the functionality of our prediction model, from 1984 to 2014, 2004 to 2014,2011 to 2014, 2013 to 2014, based on different frequency as data are collected as daily, weekly, monthly.
 
 Description of Method
     Mahout provides a package for linear regression: org.apache.mahout.classfier.sgd.TrainLogistic. This package allows user to generate a model via training data and then apply the generated model to testing data in order to calculate the accuracy and achieve other related technical results.
@@ -97,14 +97,20 @@ Results
 ==================
 Influence of Prediction Accuracy
     Different datasets may be applied by using our prediction model, but it will need some adjustments on training data parameters, such as the portion of training data and testing data. The case stated above has the best output result with the parameters. And data frequency and period will also affect the accuracy outputs.
+    
     With higher frequency of sample data, our model can predict more accurate prediction. Thats because the model is built based on more data.
+    
     The influence of time length is complex. First of all, 1-year data is extremely unreliable due to its limited amount of data, which causes contingency of the result. Secondly, 30-year data is less reliable than medium-term data. Thats because there are huge changes in both company and market. Thus, the result will be less accurate. Finally, 10-year data is optimal because it has sufficient data as well as relatively new data compared to 30-year data.
 
 Analysis on Prediction Result
     The result of prediction on dataset ”HD-2004-2014-d” is shown below. 
+    
     AUC = 0.85
+    
     confusion: [[138.0, 52.0], [17.0, 80.0]]
+    
     entropy: [[-0.6, -0.7], [-0.9, -0.6]]
+    
     The actual data have 155 lower prices and 132 higher prices. The confusion matrix shows that our testing result has 138 matches lower prices and 80 matches higher prices. And accuracy of this model is 0.85, which is a relatively high accuracy. It means that the model is relatively reliable.
 
 
