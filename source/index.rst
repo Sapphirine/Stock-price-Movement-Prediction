@@ -103,7 +103,7 @@ Influence of Prediction Accuracy
     The influence of time length is complex. First of all, 1-year data is extremely unreliable due to its limited amount of data, which causes contingency of the result. Secondly, 30-year data is less reliable than medium-term data. Thats because there are huge changes in both company and market. Thus, the result will be less accurate. Finally, 10-year data is optimal because it has sufficient data as well as relatively new data compared to 30-year data.
 
 Analysis on Prediction Result
-    The result of prediction on dataset ”HD-2004-2014-d” is shown below. 
+    The result of prediction on dataset ”HD-2004-2014-d” is shown below:
     AUC = 0.85
     confusion: [[138.0, 52.0], [17.0, 80.0]]
     entropy: [[-0.6, -0.7], [-0.9, -0.6]]
