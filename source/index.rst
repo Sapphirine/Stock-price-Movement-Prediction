@@ -95,7 +95,17 @@ We used the identical technique to Mahout version(please see earlier in this rep
 
 Results
 ==================
+Influence of Prediction Accuracy
+    Different datasets may be applied by using our prediction model, but it will need some adjustments on training data parameters, such as the portion of training data and testing data. The case stated above has the best output result with the parameters. And data frequency and period will also affect the accuracy outputs.
+    With higher frequency of sample data, our model can predict more accurate prediction. Thats because the model is built based on more data.
+    The influence of time length is complex. First of all, 1-year data is extremely unreliable due to its limited amount of data, which causes contingency of the result. Secondly, 30-year data is less reliable than medium-term data. Thats because there are huge changes in both company and market. Thus, the result will be less accurate. Finally, 10-year data is optimal because it has sufficient data as well as relatively new data compared to 30-year data.
 
+Analysis on Prediction Result
+    The result of prediction on dataset ”HD-2004-2014-d” is shown below. 
+    AUC = 0.85
+    confusion: [[138.0, 52.0], [17.0, 80.0]]
+    entropy: [[-0.6, -0.7], [-0.9, -0.6]]
+    The actual data have 155 lower prices and 132 higher prices. The confusion matrix shows that our testing result has 138 matches lower prices and 80 matches higher prices. And accuracy of this model is 0.85, which is a relatively high accuracy. It means that the model is relatively reliable.
 
 
 References
