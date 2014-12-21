@@ -104,9 +104,9 @@ Influence of Prediction Accuracy
 
 Analysis on Prediction Result
     The result of prediction on dataset ”HD-2004-2014-d” is shown below. 
-     AUC = 0.85
-     confusion: [[138.0, 52.0], [17.0, 80.0]]
-     entropy: [[-0.6, -0.7], [-0.9, -0.6]]
+       AUC = 0.85
+       confusion: [[138.0, 52.0], [17.0, 80.0]]
+       entropy: [[-0.6, -0.7], [-0.9, -0.6]]
     The actual data have 155 lower prices and 132 higher prices. The confusion matrix shows that our testing result has 138 matches lower prices and 80 matches higher prices. And accuracy of this model is 0.85, which is a relatively high accuracy. It means that the model is relatively reliable.
 
 
